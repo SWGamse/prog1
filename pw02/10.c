@@ -15,7 +15,7 @@ int main(void)
 
     printf("PACKET_ID: %u\n", id);
     printf("STATUS_CODE: %u\n", status);
-    printf("STATUS_CHAR: A\n");
+    printf("STATUS_CHAR: %c\n", status);
     printf("VOLTAGE: %.2f\n", voltage);
     printf("CHECKSUM: %u\n", checksum);
 
