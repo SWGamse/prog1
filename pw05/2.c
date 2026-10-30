@@ -1,22 +1,22 @@
-//18
 #include <stdio.h>
 #define HEIGHT 5
+#define CROWN 3
 
 int main(void)
 {
-    int i, j;
-    
-    for (i = 0; i < HEIGHT; i++)
+    int line, spaces, stars;
+
+    for (line = 0; line < HEIGHT; line++)
     {
-        for (j = 0; j < HEIGHT; j++)
-        {
-            if (((3 <= i <= 4) & (j == 2)) | (i == 2) | ((i == 1) & (1 <= j & j <= 3)) | ((i == 0) & (j == 2)))
-                printf("*");
-            else
-                printf(" ");
-        }
+        int is_crown = line < CROWN;
+        stars = is_crown * (2*line+1) + (1-is_crown);
+        spaces = (5 - stars) / 2;
+
+        for (int k = 0; k < spaces; k++) printf(" ");
+        for (int j = 0; j < stars; j++) printf("*");
+        for (int k = 0; k < spaces; k++) printf(" ");
         printf("\n");
     }
-
+    
     return 0;
 }
