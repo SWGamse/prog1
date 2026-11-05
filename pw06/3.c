@@ -8,7 +8,7 @@ int main(void)
     int amount_other = 0, sum_other = 0;
     int actual_num;
 
-    printf("Введите числа (0 - подсчёт результата):\n");
+    printf("Enter nums (0 - get result):\n");
     while (scanf("%d", &actual_num) == 1 && actual_num > 0)
     {
         if (is_triangular(actual_num))

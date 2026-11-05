@@ -8,7 +8,7 @@
 int main(void)
 {
     int running = 1;
-    int option = 1;
+    int option = 1, status;
     double value;
     printf("Mass convertor. Please enter float numbers (e.g. 3.01)\nChoose mode:\n");
 
@@ -25,22 +25,46 @@ int main(void)
         {
             case 1:
                 printf("\nKilos: ");
-                scanf("%lf", &value);
+                status = scanf("%lf", &value);
+                if (status != 1)
+                {
+                    printf("\nWrong input! Please try again.\n");
+                    while (getchar() != '\n');
+                    continue;
+                }
                 printf("Pounds: %lf\n\n", value * kg_to_lb);
                 break;
             case 2:
                 printf("\nGrams: ");
-                scanf("%lf", &value);
+                status = scanf("%lf", &value);
+                if (status != 1)
+                {
+                    printf("Wrong input! Please try again.\n\n");
+                    while (getchar() != '\n');
+                    continue;
+                }
                 printf("Ounces: %lf\n\n", value * g_to_oz);
                 break;
             case 3:
                 printf("\nTons: ");
-                scanf("%lf", &value);
+                status = scanf("%lf", &value);
+                if (status != 1)
+                {
+                    printf("Wrong input! Please try again.\n\n");
+                    while (getchar() != '\n');
+                    continue;
+                }
                 printf("Kilos: %lf\n\n", value * t_to_kg);
                 break;
             case 4:
                 printf("\nMilligrams: ");
-                scanf("%lf", &value);
+                status = scanf("%lf", &value);
+                if (status != 1)
+                {
+                    printf("Wrong input! Please try again.\n\n");
+                    while (getchar() != '\n');
+                    continue;
+                }
                 printf("Grams: %lf\n\n", value * mg_to_g);
                 break;
             case 0:

@@ -6,10 +6,16 @@
 int main(void)
 {
     double book_cost = 500.0, royalty;
-    int circulation;
+    int circulation, status;
 
     printf("Enter the book's ciculation: ");
-    scanf("%d", &circulation);
+    status = scanf("%d", &circulation);
+
+    if (status != 1 || circulation <= 0) 
+    {
+        printf("Wrong input! Please restart program.");
+        return 0;
+    }
 
     if (circulation < LOWER_TRESHOLD)
     {
