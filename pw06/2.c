@@ -9,11 +9,11 @@ int main(void)
     wchar_t ch;
     int counter;
 
-    while ((ch = getwchar()) != L'#' && ch != EOF)
+    while ((ch = getwchar()) != L'#' && ch != WEOF)
     {
         if (ch == L'о') counter++;
     }
-    wprintf("Количество замен L\'о\' на L\'0\': %d", counter);
+    wprintf(L"Number of replacements of L\'о\' with L\'0\': %d", counter);
 
     return 0;
 }
