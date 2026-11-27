@@ -2,8 +2,6 @@
 
 #include <stdio.h>
 #include "matrixfunc.h"
-#define MAX_H 100
-#define MAX_W 100
 
 void print_menu(void);
 int get_matrix_size(size_t *h, size_t *w);
@@ -29,11 +27,13 @@ int main(void) {
             case 'a':
                 if (get_matrix_size(&h, &w) == 0) {
                     printf("Размер матрицы установлен: %zu x %zu\n", h, w);
+                    while ((temp = getchar()) != '\n' && temp != EOF);
                 }
                 break;
             case 'b':
                 if (fill_matrix(arr, h, w) == 0) {
                     printf("Матрица заполнена успешно.\n");
+                    while ((temp = getchar()) != '\n' && temp != EOF);
                 }
                 break;
             case 'c':
@@ -62,6 +62,7 @@ int main(void) {
             default:
                 printf("\nНеверный пункт меню. Пожалуйста, выберите пункт меню в соответствии с списком.\n");
         }
+        
         print_menu();
     }
     return 0;
@@ -95,7 +96,7 @@ int get_matrix_size(size_t *h, size_t *w) {
     }
 
     return 0;
-}
+} 
 
 int fill_matrix(int arr[MAX_H][MAX_W], size_t h, size_t w) {
     printf("\nРазмер матрицы: %zu x %zu\n", h, w);

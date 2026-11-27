@@ -5,8 +5,9 @@
 
 #include <stddef.h>
 
-int get_max(int arr[MAX_H][MAX_W], size_t h, size_t w);
-int min_each_col(int arr[MAX_H][MAX_W], size_t h, size_t w);
-int count_above_avg_each_row(int arr[MAX_H][MAX_W], size_t h, size_t w);
+int get_max(int (*arr)[MAX_W], size_t h, size_t w);
+int min_each_col(int (*arr)[MAX_W], size_t h, size_t w);
+int count_above_avg_each_row(int (*arr)[MAX_W], size_t h, size_t w);
 
 #endif
+

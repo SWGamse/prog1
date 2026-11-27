@@ -1,9 +1,8 @@
 
 #include <stdio.h>
-#define MAX_H 100
-#define MAX_W 100
+#include "matrixfunc.h"
 
-int get_max(int arr[MAX_H][MAX_W], size_t h, size_t w) {
+int get_max(int (*arr)[MAX_W], size_t h, size_t w) {
     int max = **arr;
 
     for (int (*row)[MAX_W] = arr; row < arr + h; row++) {
@@ -18,7 +17,7 @@ int get_max(int arr[MAX_H][MAX_W], size_t h, size_t w) {
     return max;
 }
 
-int min_each_col(int arr[MAX_H][MAX_W], size_t h, size_t w) {
+int min_each_col(int (*arr)[MAX_W], size_t h, size_t w) {
     int min[w];
 
     for (size_t j = 0; j < w; j++) {
@@ -59,7 +58,7 @@ int count_below_avg(int *arrptr, size_t n) {
     return counter;
 }
 
-int count_above_avg_each_row(int arr[MAX_H][MAX_W], size_t h, size_t w) {
+int count_above_avg_each_row(int (*arr)[MAX_W], size_t h, size_t w) {
     printf("\nКоличество элементов выше среднего в каждой строке:\n");
 
     for (int (*row)[MAX_W] = arr; row < arr + h; row++) {
